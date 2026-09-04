@@ -31,7 +31,7 @@ collections:
               - label: "Photo"
                 name: "photo"
                 widget: "image"
-                required: false
+                required: true
                 hint: "Upload a photo of the finished work."
 
               - label: "Date Completed"
