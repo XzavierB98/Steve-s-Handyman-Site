@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://tcreno.org
+
+collections:
+  - name: "gallery"
+    label: "Project Photos"
+    files:
+      - name: "projects"
+        label: "Completed Projects"
+        file: "projects.json"
+        description: "Add a photo each time you finish a job. Click 'Add Completed Projects' below, fill it in, then hit Publish."
+        format: "json"
+        fields:
+          - label: "Completed Projects"
+            name: "projects"
+            widget: "list"
+            label_singular: "Project"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Project Title"
+                name: "title"
+                widget: "string"
+                hint: "A short name for the job, e.g. 'Kitchen Faucet Replacement'"
+
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                hint: "Upload a photo of the finished work."
+
+              - label: "Date Completed"
+                name: "date"
+                widget: "datetime"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                picker_utc: false
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                required: false
+                hint: "Optional — a sentence about what the job involved."

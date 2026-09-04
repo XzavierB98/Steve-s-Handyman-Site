@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get a Quote | Steve's Handyman Services</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <span class="logo-tag">EST. TRADE</span>
+      <span class="logo-name">Steve's Handyman Services</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Our Work</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="active">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:8px;">
+  <div class="container">
+    <span class="eyebrow">Work Order — New Request</span>
+    <h1 style="font-size:clamp(30px,4.5vw,44px);">Let's get this<br>on the schedule.</h1>
+    <p class="lede">Fill in the details below. The more you tell Steve up front, the faster and more accurate your quote will be.</p>
+  </div>
+</section>
+
+<section style="padding-top:8px;">
+  <div class="container" style="max-width:760px;">
+    <form class="form-card" id="intake-form" name="intake-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+      <input type="hidden" name="form-name" value="intake-form" />
+      <p style="position:absolute;left:-9999px;" aria-hidden="true">
+        <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+      </p>
+
+      <fieldset style="margin-bottom:24px;">
+        <legend>Contact Info</legend>
+        <div class="form-row" style="margin-top:14px;">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="jane@email.com">
+          </div>
+          <div class="field">
+            <label for="preferred-contact">Preferred Contact Method</label>
+            <select id="preferred-contact" name="preferred-contact">
+              <option>Phone Call</option>
+              <option>Text Message</option>
+              <option>Email</option>
+            </select>
+          </div>
+        </div>
+        <div class="field full">
+          <label for="address">Property Address</label>
+          <input type="text" id="address" name="address" placeholder="Street, City, ZIP">
+        </div>
+      </fieldset>
+
+      <fieldset style="margin-bottom:24px;">
+        <legend>The Job</legend>
+        <div class="field full" style="margin-top:14px;margin-bottom:18px;">
+          <label>What kind of work do you need? (select all that apply)</label>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="job-type" value="carpentry"> Carpentry / Repair</label>
+            <label><input type="checkbox" name="job-type" value="painting"> Painting</label>
+            <label><input type="checkbox" name="job-type" value="plumbing"> Plumbing Fix</label>
+            <label><input type="checkbox" name="job-type" value="electrical"> Electrical Fix</label>
+            <label><input type="checkbox" name="job-type" value="assembly"> Assembly / Install</label>
+            <label><input type="checkbox" name="job-type" value="maintenance"> Seasonal Maintenance</label>
+            <label><input type="checkbox" name="job-type" value="outdoor"> Deck / Fence / Gutter</label>
+            <label><input type="checkbox" name="job-type" value="other"> Something Else</label>
+          </div>
+        </div>
+        <div class="field full" style="margin-bottom:18px;">
+          <label for="details">Describe the Job</label>
+          <textarea id="details" name="details" placeholder="What needs fixing, replacing, or installed? Include any details that would help — size, location in the home, how long it's been an issue, etc."></textarea>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="urgency">Urgency</label>
+            <select id="urgency" name="urgency">
+              <option>Flexible — whenever works</option>
+              <option>Within the next 2 weeks</option>
+              <option>Urgent — as soon as possible</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="budget">Estimated Budget Range</label>
+            <select id="budget" name="budget">
+              <option>Not sure yet</option>
+              <option>Under $150</option>
+              <option>$150–$400</option>
+              <option>$400–$1,000</option>
+              <option>$1,000+</option>
+            </select>
+          </div>
+        </div>
+        <div class="field full">
+          <label for="date">Preferred Date / Time Window</label>
+          <input type="text" id="date" name="date" placeholder="e.g. Weekday mornings, or a specific date">
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;text-align:center;font-size:16px;">Submit Request</button>
+
+      <p class="form-note">Submitting this form sends your request directly to Steve — you'll get a confirmation once it goes through.</p>
+    </form>
+  </div>
+</section>
+<svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="60" fill="#FBF1DD"></rect><path d="M0,20 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#0B4A43"></path></svg>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo-name" style="color:var(--bg);font-size:18px;margin-bottom:6px;">Steve's Handyman Services</div>
+        <div style="font-size:14px;color:rgba(250,247,241,.75);">Serving the local community, one job at a time.</div>
+      </div>
+      <div class="foot-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Our Work</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Get a Quote</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Steve's Handyman Services</div>
+  </div>
+</footer>
+
+</body>
+</html>

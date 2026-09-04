@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steve's Handyman Services | Repairs, Remodels & Maintenance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <span class="logo-tag">EST. TRADE</span>
+      <span class="logo-name">Steve's Handyman Services</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Our Work</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="ticket">
+      <span class="eyebrow">Work Order No. 0001 — New Job</span>
+      <h1>Fixed right,<br>the first time.</h1>
+      <p class="lede">Reliable, local handyman service for repairs, small remodels, and the growing list of jobs you've been meaning to get to. Straight answers, fair pricing, no surprises.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        <a href="services.html" class="btn btn-pine">See Services</a>
+      </div>
+
+      <div class="stamp-row">
+        <div class="stamp">Locally<br>Trusted</div>
+        <div class="stat"><strong>20+</strong>Years in the trade</div>
+        <div class="stat"><strong>Owner</strong>Operated</div>
+        <div class="stat"><strong>500+</strong>Jobs completed locally</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="60" fill="#FBF1DD"></rect><path d="M0,20 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#F5E2B8"></path></svg>
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What Gets Fixed</span>
+      <h2>A little bit of everything, done properly.</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Carpentry &amp; Repairs</h3>
+        <p>Doors, trim, framing, drywall patches, and the small structural fixes that add up.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Painting &amp; Finishing</h3>
+        <p>Interior and exterior touch-ups to full room refreshes, clean lines every time.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>Plumbing &amp; Electrical Fixes</h3>
+        <p>Leaky fixtures, running toilets, light fixtures, outlets — the everyday stuff.</p>
+      </div>
+      <div class="card">
+        <span class="num">04</span>
+        <h3>Assembly &amp; Install</h3>
+        <p>Furniture, shelving, TV mounts, curtain rods — built once, built right.</p>
+      </div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="services.html" class="btn btn-outline" style="border-color:var(--palm);color:var(--palm);">View Full Services List →</a>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="60" fill="#F5E2B8"></rect><path d="M0,40 C300,5 900,55 1200,15 L1200,60 L0,60 Z" fill="#FBF1DD"></path></svg>
+<section>
+  <div class="container">
+    <div class="ticket" style="display:flex;gap:32px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+      <div style="max-width:520px;">
+        <span class="eyebrow">Get Started</span>
+        <h2 style="font-size:28px;">Tell Steve what needs fixing.</h2>
+        <p style="color:var(--ink-soft);">Fill out a short intake form and get a call back with a straightforward quote — no pressure, no upsell.</p>
+      </div>
+      <a href="contact.html" class="btn btn-primary">Start the Intake Form</a>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="60" fill="#FBF1DD"></rect><path d="M0,25 C300,55 900,5 1200,30 L1200,60 L0,60 Z" fill="#0B4A43"></path></svg>
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo-name" style="color:var(--bg);font-size:18px;margin-bottom:6px;">Steve's Handyman Services</div>
+        <div style="font-size:14px;color:rgba(250,247,241,.75);">Serving the local community, one job at a time.</div>
+      </div>
+      <div class="foot-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Our Work</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Get a Quote</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Steve's Handyman Services</div>
+  </div>
+</footer>
+
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  // Redirects Steve to the admin panel after he accepts his email invite
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function(user){
+      if (!user) {
+        window.netlifyIdentity.on("login", function(){
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

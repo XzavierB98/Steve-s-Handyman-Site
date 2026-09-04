@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Work | Steve's Handyman Services</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <span class="logo-tag">EST. TRADE</span>
+      <span class="logo-name">Steve's Handyman Services</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="work.html" class="active">Our Work</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:8px;">
+  <div class="container">
+    <span class="eyebrow">Recent Projects</span>
+    <h1 style="font-size:clamp(30px,4.5vw,44px);">A look at the<br>finished work.</h1>
+    <p class="lede">Photos from recent jobs around the neighborhood. Every one of these started as something on somebody's to-do list.</p>
+  </div>
+</section>
+
+<section style="padding-top:8px;">
+  <div class="container">
+    <div id="gallery" class="gallery-grid">
+      <!-- Photos load here -->
+    </div>
+    <div id="gallery-empty" class="gallery-empty" style="display:none;">
+      <p style="margin:0;">No project photos posted yet — check back soon.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="60" fill="#FBF1DD"></rect><path d="M0,20 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#F5E2B8"></path></svg>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="ticket" style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+      <div>
+        <h2 style="font-size:24px;">Want your project on this page?</h2>
+        <p style="color:var(--ink-soft);margin:0;">Tell Steve what needs fixing and get a straightforward quote.</p>
+      </div>
+      <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="60" fill="#F5E2B8"></rect><path d="M0,20 C300,60 900,0 1200,30 L1200,60 L0,60 Z" fill="#0B4A43"></path></svg>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo-name" style="color:var(--bg);font-size:18px;margin-bottom:6px;">Steve's Handyman Services</div>
+        <div style="font-size:14px;color:rgba(250,247,241,.75);">Serving the local community, one job at a time.</div>
+      </div>
+      <div class="foot-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Our Work</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Get a Quote</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Steve's Handyman Services</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var grid = document.getElementById('gallery');
+  var empty = document.getElementById('gallery-empty');
+
+  function showEmpty(){
+    grid.style.display = 'none';
+    empty.style.display = 'block';
+  }
+
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  fetch('projects.json', {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error('no index'); return r.json(); })
+    .then(function(data){
+      var items = Array.isArray(data) ? data : (data && data.projects) || [];
+      if(!Array.isArray(items) || items.length === 0){ showEmpty(); return; }
+
+      items.sort(function(a,b){
+        return new Date(b.date || 0) - new Date(a.date || 0);
+      });
+
+      grid.innerHTML = items.map(function(it){
+        var dateStr = '';
+        if(it.date){
+          var d = new Date(it.date);
+          if(!isNaN(d)){
+            dateStr = d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+          }
+        }
+        return '<article class="gallery-card">' +
+          (it.photo ? '<img src="' + esc(it.photo) + '" alt="' + esc(it.title || 'Completed project') + '" loading="lazy">' : '') +
+          '<div class="gallery-body">' +
+            (dateStr ? '<span class="gallery-date">' + esc(dateStr) + '</span>' : '') +
+            '<h3>' + esc(it.title || 'Completed Project') + '</h3>' +
+            (it.description ? '<p>' + esc(it.description) + '</p>' : '') +
+          '</div>' +
+        '</article>';
+      }).join('');
+    })
+    .catch(showEmpty);
+})();
+</script>
+
+</body>
+</html>
