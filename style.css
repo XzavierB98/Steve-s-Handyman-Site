@@ -393,3 +393,69 @@ footer.site-footer .foot-bottom{
   text-align:center;
   color:var(--ink-soft);
 }
+
+/* ---------- LIGHTBOX ---------- */
+.gallery-photo{cursor:zoom-in;}
+.gallery-photo:focus-visible{outline:3px solid var(--terracotta);outline-offset:-3px;}
+
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  background:rgba(11,74,67,.92);
+  padding:32px 24px;
+  overflow:auto;
+}
+.lightbox.open{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.lightbox-inner{
+  margin:0;
+  max-width:1100px;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+}
+.lightbox-inner img{
+  max-width:100%;
+  max-height:80vh;
+  width:auto;
+  height:auto;
+  border-radius:12px;
+  border:3px solid var(--sand);
+  box-shadow:0 12px 40px rgba(0,0,0,.4);
+  background:var(--sand-alt);
+}
+#lightbox-caption{
+  font-family:'Libre Caslon Display',serif;
+  font-size:19px;
+  color:var(--sand);
+  text-align:center;
+}
+.lightbox-close{
+  position:fixed;
+  top:18px;right:22px;
+  width:44px;height:44px;
+  border:2px solid var(--sand);
+  background:transparent;
+  color:var(--sand);
+  border-radius:50%;
+  font-size:26px;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:background .15s ease;
+}
+.lightbox-close:hover{background:rgba(251,241,221,.18);}
+
+@media (max-width:640px){
+  .lightbox{padding:56px 14px 24px;}
+  .lightbox-inner img{max-height:70vh;}
+}
