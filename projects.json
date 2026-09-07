@@ -1,3 +1,10 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "title": "test",
+      "photo": "/images/uploads/img_8952.jpg",
+      "date": "2026-09-07",
+      "description": "test subject "
+    }
+  ]
 }
